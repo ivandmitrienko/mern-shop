@@ -1,0 +1,30 @@
+.icons{
+    height: 70px;
+    animation: block-icons 0.35s linear;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: rgb(7, 56, 97);
+    padding: 10px;
+    cursor: pointer;
+    transition: block-icons 0.35s linear;
+}
+
+.icons img{
+    height: 100%;
+}
+
+@keyframes block-icons{
+
+    from{
+        height: 0px;
+    }
+
+    to{
+        height: 70px;
+    }
+
+
+}
