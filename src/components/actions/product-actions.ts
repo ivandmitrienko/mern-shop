@@ -15,7 +15,7 @@ export const addNewProductToBase = ({ nameOfProduct, nameOfPrice, image, count }
     dispatch(addTodoStarted());
 
     axios
-      .post('https://mernapp-7977ff1afd46.herokuapp.com/products', {
+      .post('/products', {
         nameOfProduct,
         nameOfPrice,
         image,
@@ -33,7 +33,7 @@ export const addNewProductToBase = ({ nameOfProduct, nameOfPrice, image, count }
 export const getProductsFromBase = () => {
   return (dispatch: Dispatch<DispatchAction>) => {
     axios
-      .get('https://mernapp-7977ff1afd46.herokuapp.com/products')
+      .get('/products')
       .then((res) => {
         dispatch(addProducts(res.data))
       })
@@ -46,7 +46,7 @@ export const getProductsFromBase = () => {
 export const deleteProductFromBase = (_id?: Types.ObjectId) => {
   return (dispatch: Dispatch<DispatchAction>) => {
     axios
-      .delete(`https://mernapp-7977ff1afd46.herokuapp.com/ProductDescription/${_id}`)
+      .delete(`/ProductDescription/${_id}`)
       .then((res) => {
         dispatch(deleteProductFromRedux(res.data._id))
       })
@@ -59,7 +59,7 @@ export const deleteProductFromBase = (_id?: Types.ObjectId) => {
 export const addCountofProductToBase = (product: Product) => {
   return (dispatch: Dispatch<DispatchAction>) => {
     axios
-      .put('https://mernapp-7977ff1afd46.herokuapp.com', { product })
+      .put('/', { product })
       .then((res) => {
         dispatch(addCountofProductToRedux(res.data._id))
       })
